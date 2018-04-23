@@ -42,7 +42,7 @@ We also propose update state check scheme, which detects and corrects package-co
 ### 2.2.1. Package-Component Mappings
 - The registry paths for package-component mappings  
 The figure 1 shows the registry paths for package-component mappings, where it can be determined which version of a particular component belongs to which update package.  
-<center> <img src="Images/ComponentDetect.png" width="700"> </center>  
+<center> <img src="Images/ComponentDetect.png" width="700"> </center>
 <center> figure 1. Registry Settings for Package-Component Mappings </center> 
 
 ### 2.2.2. Detecting the Package-Component Mismatches
@@ -58,6 +58,12 @@ Based on the list of package-component mappings, we describes the following proc
 3. Verify the hardlink information of components  
   
 # 3. Run Update-State-Checker !
+We provide Update-State-Checker written in PowerShell scripts. We ran the script on a Windows 10 64-bits desktop. Figure 2 shows the update packages installed on the system.  
+<center> <img src="Images/systeminfo.png" width="500"> </center>
+<center> figure 2. Packages Installed on the System </center>  
 
+After tampering the component "amd64_microsoft-windows-smbserver-v2", We ran the script. The execution result is shown in the figure 3.
+<center> <img src="Images/detection.png" width="700"> </center>
+<center> figure 3. The Execution Result </center>  
 
 
