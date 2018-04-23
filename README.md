@@ -41,7 +41,7 @@ We also propose update state check scheme, which detects and corrects package-co
 
 ### 2.2.1. Package-Component Mappings
 - The registry paths for package-component mappings  
-The figure 1 shows the registry paths for package-component mappings, where it can be determined which version of a particular component belongs to which update package.  
+The package-component mappings are the key infor-mation to solve the blind spot issue. The figure 1 shows the registry paths for package-component mappings, where it can be determined which version of a particular component belongs to which update package.  
 ![ComponentDetect](Images/ComponentDetect.png "mapping")
 <em>figure 1. Registry Settings for Package-Component Mappings</em> 
 
@@ -58,13 +58,12 @@ Based on the list of package-component mappings, we describes the following proc
 3. Verify the hardlink information of components  
   
 # 3. Run Update-State-Checker !
-We provide Update-State-Checker written in PowerShell scripts. We ran the script on a Windows 10 64-bits desktop. Figure 2 shows the update packages installed on the system.  
+We provide Update-State-Checker written in PowerShell based on the detection scheme. We ran the script on a Windows 10 64-bits desktop. Figure 2 shows the update packages installed on the system.  
 ![systeminfo](Images/systeminfo.png "systeminfo")
 <em>figure 2. Packages Installed on the System </em>  
 
 After tampering the component "amd64_microsoft-windows-smbserver-v2", We ran the script. The execution result is shown in the figure 3.  
 ![The Execution Result](Images/detection.png "detection")
 <em>figure 3. The Execution Result</em>  
-
-
-
+  
+The execution result tells you that the correct version of the component "amd64_microsoft-windows-smbserver-v2" is 10.0.16299.371, but now consists of 10.0.16299.309.
