@@ -1,5 +1,5 @@
 # 1. Notice
-Update-State-Checker is a tool to detect the package-component mismatch issue will be introduced in DIMVA 2018.
+Update-State-Checker is a proof-of-concept to detect the package-component mismatch issue will be introduced in DIMVA 2018.
 
 ## 1.1. Papers and Presentations
 They will be released after being published in DIMVA 2018.
@@ -59,7 +59,7 @@ We provide a simple way to generate a package-component mismatch. We ran the scr
 ![systeminfo](Images/systeminfo.png "systeminfo")
 <em>figure 2. Packages Installed on the System </em>  
   
-The built-in tool, SFC (System File Checker) detects and repairs component damages based on specific registry values. The figure 3 shows an example of modifying registry values to revert component "amd64_microsoft-windows-smbserver-v2" to a previous version.
+The built-in tool, System File Checker (SFC) detects and repairs component damages based on specific registry values. The figure 3 shows an example of modifying registry values to revert component "amd64_microsoft-windows-smbserver-v2" to a previous version.
 ![modification](Images/modification.png "modification")
 <em>figure 3. An Example of Component Resource Modification</em>  
   
