@@ -55,7 +55,7 @@ Based on the list of package-component mappings, we describes the following proc
 3. Verify the hardlink information of components  
   
 # 3. Generating a Pacakge-Component Mismatch
-We provide a simple way to generate a package-component mismatch. We ran the script on a Windows 10 64-bits desktop. Figure 2 shows the update packages installed on the system.  
+We provide a simple way to generate a package-component mismatch. We tested it on a Windows 10 64-bits desktop. Figure 2 shows the update packages installed on the system.  
 ![systeminfo](Images/systeminfo.png "systeminfo")
 <em>figure 2. Packages Installed on the System </em>  
   
