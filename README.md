@@ -11,7 +11,7 @@ We always welcome your contributions. Issue report, bug fix, new feature impleme
 Update-State-Checker has dual license, GPL v2 and MIT. You can choose any license you want.
 
 # 2. Introduction of Update-State-Checker
-Update-State-Checker solves some of the issues caused by problems of the Windows update management mechanisms.
+Update-State-Checker solves some of the issues caused by problems of the Windows update management mechanisms. We introduce the problems of the current Windows update management and Update State Check scheme that detects the package-component mismatch. We stress that Update State Check scheme should be deployed immediately to mitigate large-scale exploitation of the identified problems.
 
 ## 2.1. Proplems of Windows Update Management
 The package-component mismatch and the blind spot issue are the first structural problems in the Windows update management mechanism that have not been reported. We outline the concept of a package-component mismatch and two types of blind spots of Windows update management and reveal the potential threats associated with them. The blind spot issue occurs because Windows does not care about the consistency between update packages and components installed on the system. These issues affect all server and desktop platforms.  
