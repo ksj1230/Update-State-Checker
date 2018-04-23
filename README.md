@@ -45,4 +45,5 @@ The figure 1 shows the registry paths for package-component mappings, where it c
 The subkeys of “ComponentDetect” represent component names.
 The red box to the right lists the version of the component installed by the particular package.
 For example, the name of the package that installed version 6.1.7200.21980 of the amd64_microsoft-windows-os-kernel is KB3046480.  
-[![figure 1](https://github.com/ksj1230/Update-State-Checker/tree/master/Images/ComponentDetect.png)]
+<center> <img src="Images/ComponentDetect.png" width="700"> </center>  
+<center> figure 1. Registry Settings for Package-Component Mappings </center> 
