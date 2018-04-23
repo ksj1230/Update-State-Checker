@@ -54,10 +54,10 @@ The following information is required:
   
 Based on the list of package-component mappings, we describes the following procedure of a detection scheme:   
 1. List the installed packages on the system  
-The package installation information can be found in the registry path Pn. Alterna-tively, if you run the command “dism /online /get-packages,” the servicing agent queries the registry keys and values under the path Pn.
 2. Check the package-component mappings  
-It must be ensured that your system has component configurations that match the installed package. If all component configurations match the package-component mapping list, the up-date status is normal; unmatched items should be considered to have a package-component mismatch.
 3. Verify the hardlink information of components  
-Finally, the hardlink information for each component needs to be verified. The "fsutil hardlink list [component file path]" command tells us the hardlink information. If the hardlink sources in the component store have the correct versions of the target components, the update status is normal. Otherwise, the update status has been compromised.
+  
+# 3. Run Update-State-Checker !
+
 
 
