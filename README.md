@@ -41,7 +41,7 @@ We also propose update state check scheme, which detects and corrects package-co
 
 ### 2.2.1. Package-Component Mappings
 To ensure package-component consistency, knowledge of which component configuration is appropriate for the current update state is crucial.
-Fig. 6 shows the registry paths for package-component mappings, where it can be determined which version of a particular component belongs to which update package.
+The figure 1 shows the registry paths for package-component mappings, where it can be determined which version of a particular component belongs to which update package.
 The subkeys of “ComponentDetect” represent component names.
 The red box to the right lists the version of the component installed by the particular package.
 For example, the name of the package that installed version 6.1.7200.21980 of the amd64_microsoft-windows-os-kernel is KB3046480.
