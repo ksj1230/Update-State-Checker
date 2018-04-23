@@ -57,13 +57,20 @@ Based on the list of package-component mappings, we describes the following proc
 2. Check the package-component mappings  
 3. Verify the hardlink information of components  
   
-# 3. Run Update-State-Checker !
-We provide Update-State-Checker written in PowerShell based on the detection scheme. We ran the script on a Windows 10 64-bits desktop. Figure 2 shows the update packages installed on the system.  
-![systeminfo](Images/systeminfo.png "systeminfo")
-<em>figure 2. Packages Installed on the System </em>  
+# 3. Generating a Pacakge-Component Mismatch
+We provide a simple way to generate a package-component mismatch. The built-in tool, SFC (System File Checker) detects and repairs component damages based on specific registry values. The figure 2 shows an example of modifying registry values to revert component "amd64_microsoft-windows-smbserver-v2" to a previous version.
+![modification](Images/modification.png "modification")
+<em>figure 2. An Example of Component Resource Modification</em>  
+  
+We changed the default value from 10.0.16299.371 to 10.0.16299.309. Then open the cmd window and run "SFC /SCANNOW" with an administrator privilege. When the component replacement is completed by the SFC, perform a reboot. Finally, the component will revert to version 10.0.16299.309. (This version is not known to have a vulnerability. It was done just for testing.)
 
-After tampering the component "amd64_microsoft-windows-smbserver-v2", We ran the script. The execution result is shown in the figure 3.  
+# 4. Run Update-State-Checker !
+We provide Update-State-Checker written in PowerShell based on the detection scheme. We ran the script on a Windows 10 64-bits desktop. Figure 3 shows the update packages installed on the system.  
+![systeminfo](Images/systeminfo.png "systeminfo")
+<em>figure 3. Packages Installed on the System </em>  
+
+After tampering the component "amd64_microsoft-windows-smbserver-v2", We ran the script. The execution result is shown in the figure 4.  
 ![The Execution Result](Images/detection.png "detection")
-<em>figure 3. The Execution Result</em>  
+<em>figure 4. The Execution Result</em>  
   
 The execution result tells you that the correct version of the component "amd64_microsoft-windows-smbserver-v2" is 10.0.16299.371, but now consists of 10.0.16299.309.
