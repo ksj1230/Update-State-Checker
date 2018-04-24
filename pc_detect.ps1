@@ -1,3 +1,17 @@
+<#
+                       Update-State-Checker
+                       --------------------
+       a PoC Script for Update State Check Scheme
+ 
+                Copyright (C) 2018 Sung-jin Kim
+      at National Security Research Institute of South Korea
+#>
+
+<#
+   This software has dual license (MIT and GPL v2). See the GPL_LICENSE and
+   MIT_LICENSE file.
+#>
+ 
 $SideBySide = Get-ChildItem -Path 'Registry::HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\SideBySide\Winners\'
 
 #Get the latest component versions and its corresponding packages
