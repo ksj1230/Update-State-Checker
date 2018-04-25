@@ -66,10 +66,26 @@ The built-in tool, System File Checker (SFC) detects and repairs component damag
 We changed the default value from 10.0.16299.371 to 10.0.16299.309. Then open the cmd window and run "SFC /SCANNOW" with an administrator privilege. When the component replacement is completed by the SFC, perform a reboot. Finally, the component will revert to version 10.0.16299.309. (This version is not known to have a vulnerability. It was done just for testing.)
 
 # 4. Run Update-State-Checker !
-We provide Update-State-Checker written in PowerShell based on the detection scheme.
+We provide Update-State-Checker written in PowerShell based on the detection scheme.  
+(See the script "pc_detect.ps1".)
 
 After tampering the component "amd64_microsoft-windows-smbserver-v2", We ran the Update-State-Checker. The execution result is shown in the figure 4.  
 ![The Execution Result](Images/detection.png "detection")
 <em>figure 4. The Execution Result</em>  
   
 The execution result tells you that the correct version of the component "amd64_microsoft-windows-smbserver-v2" is 10.0.16299.371, but now consists of 10.0.16299.309.
+
+
+# 5. Research Note
+Here we describe the meaning of the registry locations based on observations.
+
+## 5.1. ComponentDetect
+It is located in "HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Component Based Servicing\ComponentDetect\".  
+When an update package is installed, updated component names are registered as subkeys in the corresponding location. Also, package names and versions of the component installed are registered as data names and values. Not every component name is registered as a subkey for that path. See figure 1 for example.  
+  
+In our detection script, we use ComponentDetect to identify package-component mappings.
+
+## 5.2. SideBySide
+It is located in "HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\SideBySide\".  
+Under the "Winners," all component names installed on the system are registered as subkeys. Also, the version number of the currently installed component is recorded under the corresponding subkey.  
+The key-values at this location play a decisive role in the component configuration. As noted in the paper, the SFC detects whether a component is corrupt based on the current component version name of the path.
