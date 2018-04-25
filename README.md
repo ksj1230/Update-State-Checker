@@ -82,7 +82,6 @@ Here we describe the meaning of the registry locations based on observations.
 ## 5.1. ComponentDetect
 It is located in "HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Component Based Servicing\ComponentDetect\".  
 When an update package is installed, updated component names are registered as subkeys in the corresponding location. Also, package names and versions of the component installed are registered as data names and values. Not every component name is registered as a subkey for that path. See figure 1 for example.  
-  
 In our detection script, we use ComponentDetect to identify package-component mappings.
 
 ## 5.2. SideBySide
