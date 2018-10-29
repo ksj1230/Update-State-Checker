@@ -1,8 +1,9 @@
 # 1. Notice
-Update-State-Checker is a proof-of-concept to detect the package-component mismatch issue will be introduced in DIMVA 2018.
+Update-State-Checker is a proof-of-concept to detect the package-component mismatch issue introduced in DIMVA 2018.
+We are improving the tool to a remote scanner version based on Windows Management Instrumentation (WMI).
 
 ## 1.1. Papers and Presentations
-They will be released after being published in DIMVA 2018.
+You can refer to an uploaded materials (a slide and a paper) presented in DIMVA 2018.
 
 ## 1.2. Contributions
 We always welcome your contributions. Issue report, bug fix, new feature implementation, anything is alright. Feel free to send us. 
